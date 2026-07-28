@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Segoe UI", "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --color-background: #f4f6fb;
+  --color-foreground: #0f172a;
+  --color-card: #ffffff;
+  --color-card-foreground: #0f172a;
+  --color-muted: #e8edf7;
+  --color-muted-foreground: #64748b;
+  --color-border: #d7deee;
+  --color-primary: #4f46e5;
+  --color-primary-foreground: #ffffff;
+  --color-accent: #6366f1;
+  --color-success: #16a34a;
+  --color-warning: #d97706;
+  --color-danger: #dc2626;
+  --color-sidebar: #0f172a;
+  --color-sidebar-foreground: #e2e8f0;
+  --radius-xl: 1rem;
+}
+
+.dark {
+  --color-background: #0b1220;
+  --color-foreground: #e5eefc;
+  --color-card: #111827;
+  --color-card-foreground: #e5eefc;
+  --color-muted: #1e293b;
+  --color-muted-foreground: #94a3b8;
+  --color-border: #243044;
+  --color-primary: #818cf8;
+  --color-primary-foreground: #0b1220;
+  --color-accent: #a5b4fc;
+  --color-sidebar: #020617;
+  --color-sidebar-foreground: #cbd5e1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(99, 102, 241, 0.18), transparent 55%),
+    radial-gradient(900px 500px at 100% 0%, rgba(56, 189, 248, 0.12), transparent 50%),
+    var(--color-background);
+  color: var(--color-foreground);
+}
+
+.dark body,
+.dark {
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(99, 102, 241, 0.22), transparent 55%),
+    radial-gradient(900px 500px at 100% 0%, rgba(14, 165, 233, 0.12), transparent 50%),
+    var(--color-background);
+}
+
+.doc-preview {
+  background: #fff;
+  color: #111;
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  padding: 1.75rem 2rem;
+  max-height: 72vh;
+  overflow: auto;
+}
+
+.doc-preview * {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.doc-preview h1 {
+  font-size: 20px;
+  text-align: center;
+}
+
+.doc-preview h2 {
+  font-size: 16px;
+}
+
+.doc-preview p,
+.doc-preview td,
+.doc-preview th {
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.doc-preview table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.doc-preview td,
+.doc-preview th {
+  border: 1px solid #bbb;
+  padding: 6px 8px;
+  vertical-align: top;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.25s ease-out;
+}
